@@ -1,0 +1,31 @@
+#######################################
+# Syntax Coloring Map For RGBLed
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+RGBLed	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+setColor	KEYWORD2
+flash	KEYWORD2
+fadeOut	KEYWORD2
+fadeIn	KEYWORD2
+off	KEYWORD2
+brightness	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+COMMON_ANODE	LITERAL1
+COMMON_CATHODE	LITERAL1
+RED	LITERAL1
+GREEN	LITERAL1
+BLUE	LITERAL1
+MAGENTA	LITERAL1
+CYAN	LITERAL1
+YELLOW	LITERAL1
+WHITE	LITERAL1
