@@ -20,8 +20,8 @@ brightness	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
-COMMON_ANODE	LITERAL1
-COMMON_CATHODE	LITERAL1
+COMMON_ANODE	(LITERAL1)
+COMMON_CATHODE	(LITERAL1)
 RED	LITERAL1
 GREEN	LITERAL1
 BLUE	LITERAL1
