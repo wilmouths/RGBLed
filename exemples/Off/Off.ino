@@ -1,6 +1,6 @@
 #include <RGBLed.h>
 
-RGBLed led(13, 12, 11, COMMON_CATHODE);
+RGBLed led(11, 10, 9, COMMON_CATHODE);
 
 void setup() { }
 
