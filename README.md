@@ -18,7 +18,7 @@ RGBLed led(RED_PIN, GREEN_PIN, BLUE_PIN, COMMON_ANODE or COMMON_CATHODE);
 
 + Set color
 ```cpp
-led.setColor(led.RED);
+led.setColor(RGBLed::RED);
 // or
 led.setColor(255, 0, 0);
 ```
@@ -30,29 +30,29 @@ led.off();
 
 + Set brightness
 ```cpp
-led.brightness(led.RED, 50); // 50% brightness
+led.brightness(RGBLed::RED, 50); // 50% brightness
 // or
 led.brightness(255, 0, 0, 50); // 50% brightness
 ```
 
 + Flash
 ```cpp
-led.flash(led.RED, 100); // Interval 100ms
+led.flash(RGBLed::RED, 100); // Interval 100ms
 // or
 led.flash(255, 0, 0, 100); // Interval 100ms
 
-led.flash(led.RED, 250, 100); // Light on during 250ms and flash with interval (100ms)
+led.flash(RGBLed::RED, 250, 100); // Light on during 250ms and flash with interval (100ms)
 // or
 led.flash(255, 0, 0, 250, 100); // Light on during 250ms and flash with interval (100ms)
 ```
 
 + Fade
 ```cpp
-led.fadeOut(led.RED, 5, 100); // Fade out with 5 steps during 100ms
+led.fadeOut(RGBLed::RED, 5, 100); // Fade out with 5 steps during 100ms
 // or
 led.fadeOut(255, 0, 0, 5, 100); // Fade out with 5 steps during 100ms
 
-led.fadeIn(led.RED, 5, 100); // Fade in with 5 steps during 100ms
+led.fadeIn(RGBLed::RED, 5, 100); // Fade in with 5 steps during 100ms
 // or
 led.fadeIn(255, 0, 0, 5, 100); // Fade in with 5 steps during 100ms
 ```
@@ -66,3 +66,8 @@ led.fadeIn(255, 0, 0, 5, 100); // Fade in with 5 steps during 100ms
 + CYAN
 + YELLOW
 + WHITE
+
+How use colors ?
+```cpp
+RGLed::RED
+```

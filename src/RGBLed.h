@@ -33,13 +33,13 @@ class RGBLed {
 		void fadeIn(int color[3], int steps, int duration);
 		void fadeIn(int red, int green, int blue, int steps, int duration);
 
-		int RED[3] = {255, 0, 0};
-		int GREEN[3] = {0, 255, 0};
-		int BLUE[3] = {0, 0, 255};
-		int MAGENTA[3] = {255, 0, 255};
-		int CYAN[3] = {0, 255, 255};
-		int YELLOW[3] = {255, 255, 0};
-		int WHITE[3] = {255, 255, 255};
+		static int RED[3];
+		static int GREEN[3];
+		static int BLUE[3];
+		static int MAGENTA[3];
+		static int CYAN[3];
+		static int YELLOW[3];
+		static int WHITE[3];
 
 	private:
 		int _red, _blue, _green, _common;

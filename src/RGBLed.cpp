@@ -2,6 +2,14 @@
 
 #include "RGBLed.h"
 
+int RGBLed::RED[3] = {255, 0, 0};
+int RGBLed::GREEN[3] = {0, 255, 0};
+int RGBLed::BLUE[3] = {0, 0, 255};
+int RGBLed::MAGENTA[3] = {255, 0, 255};
+int RGBLed::CYAN[3] = {0, 255, 255};
+int RGBLed::YELLOW[3] = {255, 255, 0};
+int RGBLed::WHITE[3] = {255, 255, 255};
+
 RGBLed::RGBLed(int red, int green, int blue, Mode common)
 {
 	this->_red = red;
