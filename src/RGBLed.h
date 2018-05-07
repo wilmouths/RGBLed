@@ -15,22 +15,22 @@ class RGBLed {
 
 		void off();
 
-		void brightness(int color[3], int brightness);
+		void brightness(int rgb[3], int brightness);
 		void brightness(int red, int green, int blue, int brightness);
 
-		void flash(int color[3], int duration);
-		void flash(int color[3], int onDuration, int duration);
+		void flash(int rgb[3], int duration);
+		void flash(int rgb[3], int onDuration, int duration);
 
 		void flash(int red, int green, int blue, int duration);
 		void flash(int red, int green, int blue, int onDuration, int duration);
 
-		void setColor(int color[3]);
+		void setColor(int rgb[3]);
 		void setColor(int red, int green, int blue);
 
-		void fadeOut(int color[3], int steps, int duration);
+		void fadeOut(int rgb[3], int steps, int duration);
 		void fadeOut(int red, int green, int blue, int steps, int duration);
 
-		void fadeIn(int color[3], int steps, int duration);
+		void fadeIn(int rgb[3], int steps, int duration);
 		void fadeIn(int red, int green, int blue, int steps, int duration);
 
 		static int RED[3];
@@ -42,7 +42,7 @@ class RGBLed {
 		static int WHITE[3];
 
 	private:
-		int _red, _blue, _green, _common;
+		int _red, _green, _blue, _common;
 		void color(int red, int green, int blue);
 		void blink(int red, int green, int blue, int onDuration, int duration);
 		void intensity(int red, int green, int blue, int brightness);
