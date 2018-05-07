@@ -109,8 +109,9 @@ void RGBLed::fade(int red, int green, int blue, int steps, int duration, bool ou
 }
 
 void RGBLed::fade(int red, int green, int blue, int steps, int duration, int value) {
-	if (red > 0 && red <= 255) analogWrite(_red, value);
-	if (green > 0 && green <= 255) analogWrite(_green, value);
-	if (blue > 0 && blue <= 255) analogWrite(_blue, value);
+	float brightness = float(value) / 255.f;
+	if (red > 0 && red <= 255) analogWrite(_red, red * brightness);
+	if (green > 0 && green <= 255) analogWrite(_green, green * brightness);
+	if (blue > 0 && blue <= 255) analogWrite(_blue, blue * brightness);
 	delay((unsigned long) (duration / steps));
 }
