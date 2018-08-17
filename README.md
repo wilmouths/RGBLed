@@ -11,7 +11,7 @@
 #include <RGBLed.h>
 ```
 
-+ Create an object, this object takes one parameter which corressponds to the analgo pins are connected to on the Arduino.
++ Create an object, this object takes one parameter which corressponds to the analog pins are connected to on the Arduino.
 ```cpp
 RGBLed led(RED_PIN, GREEN_PIN, BLUE_PIN, COMMON_ANODE or COMMON_CATHODE);
 ```
@@ -69,5 +69,5 @@ led.fadeIn(255, 0, 0, 5, 100); // Fade in with 5 steps during 100ms
 
 How use colors ?
 ```cpp
-RGLed::RED
+RGBLed::RED
 ```
