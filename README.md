@@ -1,3 +1,7 @@
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+![version](https://img.shields.io/badge/version-1.0.3-blue.svg?cacheSeconds=2592000)
+![author](https://img.shields.io/badge/author-wilmouths-informational.svg)
+
 # RGBLed Arduino library
 
 > This library for Arduino allows you to control RGB led.
