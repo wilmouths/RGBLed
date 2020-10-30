@@ -3,15 +3,10 @@
 
 #include "Arduino.h"
 
-enum Mode { 
-	COMMON_ANODE, 
-	COMMON_CATHODE 
-};
-
 class RGBLed {
 
 	public:
-		RGBLed(int red, int green, int blue, Mode common);
+		RGBLed(int red, int green, int blue, bool common);
 
 		void off();
 
@@ -40,6 +35,9 @@ class RGBLed {
 		static int CYAN[3];
 		static int YELLOW[3];
 		static int WHITE[3];
+
+		static bool COMMON_ANODE;
+		static bool COMMON_CATHODE;
 
 	private:
 		int _red, _green, _blue, _common;

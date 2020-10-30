@@ -10,7 +10,10 @@ int RGBLed::CYAN[3] = {0, 255, 255};
 int RGBLed::YELLOW[3] = {255, 255, 0};
 int RGBLed::WHITE[3] = {255, 255, 255};
 
-RGBLed::RGBLed(int red, int green, int blue, Mode common):
+bool RGBLed::COMMON_ANODE = true;
+bool RGBLed::COMMON_CATHODE = false;
+
+RGBLed::RGBLed(int red, int green, int blue, bool common):
 _red(red), _green(green), _blue(blue), _common(common)
 {
 	pinMode(_red, OUTPUT);

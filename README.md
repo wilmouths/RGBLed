@@ -1,7 +1,3 @@
-![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
-![version](https://img.shields.io/badge/version-1.0.3-blue.svg?cacheSeconds=2592000)
-![author](https://img.shields.io/badge/author-wilmouths-informational.svg)
-
 # RGBLed Arduino library
 
 > This library for Arduino allows you to control RGB led.
@@ -15,9 +11,9 @@
 #include <RGBLed.h>
 ```
 
-+ Create an object, this object takes one parameter which corressponds to the analog pins are connected to on the Arduino.
++ Create an object, this object takes one parameter which corressponds to the analgo pins are connected to on the Arduino.
 ```cpp
-RGBLed led(RED_PIN, GREEN_PIN, BLUE_PIN, COMMON_ANODE or COMMON_CATHODE);
+RGBLed led(RED_PIN, GREEN_PIN, BLUE_PIN, RGBLed::COMMON_ANODE or RGBLed::COMMON_CATHODE);
 ```
 
 + Set color
@@ -73,5 +69,5 @@ led.fadeIn(255, 0, 0, 5, 100); // Fade in with 5 steps during 100ms
 
 How use colors ?
 ```cpp
-RGBLed::RED
+RGLed::RED
 ```
