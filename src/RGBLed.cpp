@@ -73,9 +73,9 @@ void RGBLed::setColor(int red, int green, int blue) {
 
 void RGBLed::color(int red, int green, int blue) {
 	if (_common == COMMON_ANODE) {
-		analogWrite(_red, ~red);
-		analogWrite(_green, ~green);
-		analogWrite(_blue, ~blue);
+		analogWrite(_red, 255 - red);
+		analogWrite(_green, 255 - green);
+		analogWrite(_blue, 255 - blue);
 	} else {
 		analogWrite(_red, red);
 		analogWrite(_green, green);
@@ -113,8 +113,17 @@ void RGBLed::fade(int red, int green, int blue, int steps, int duration, bool ou
 
 void RGBLed::fade(int red, int green, int blue, int steps, int duration, int value) {
 	float brightness = float(value) / 255.f;
-	if (red > 0 && red <= 255) analogWrite(_red, red * brightness);
-	if (green > 0 && green <= 255) analogWrite(_green, green * brightness);
-	if (blue > 0 && blue <= 255) analogWrite(_blue, blue * brightness);
+
+	if (red < 0) { red = 0;	}
+	if (red > 255) { red = 255;	}
+
+	if (green < 0) { green = 0;	}
+	if (green > 255) { green = 255;	}
+	
+	if (blue < 0) { blue = 0;	}
+	if (blue > 255) { blue = 255;	}
+
+	color(red * brightness, green * brightness, blue * brightness);
+
 	delay((unsigned long) (duration / steps));
 }
