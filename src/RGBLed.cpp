@@ -102,16 +102,16 @@ void RGBLed::fadeIn(int red, int green, int blue, int steps, int duration) {
 void RGBLed::fade(int red, int green, int blue, int steps, int duration, bool out) {
 	if (out) {
 		for (int i = steps; i >=0; i--) {
-			fade(red, green, blue, steps, duration, i * 255 / steps);
+			fade(red, green, blue, steps, duration, i * 255 / steps, i > 0);
 		}
 	} else {
 		for (int i = 0; i <= steps; i++) {
-			fade(red, green, blue, steps, duration, i * 255 / steps);
+			fade(red, green, blue, steps, duration, i * 255 / steps, i < steps);
 		}
 	}
 }
 
-void RGBLed::fade(int red, int green, int blue, int steps, int duration, int value) {
+void RGBLed::fade(int red, int green, int blue, int steps, int duration, int value, bool wait) {
 	float brightness = float(value) / 255.f;
 
 	if (red < 0) { red = 0;	}
@@ -125,5 +125,5 @@ void RGBLed::fade(int red, int green, int blue, int steps, int duration, int val
 
 	color(red * brightness, green * brightness, blue * brightness);
 
-	delay((unsigned long) (duration / steps));
+	if (wait) { delay((unsigned long) (duration / steps)); }
 }

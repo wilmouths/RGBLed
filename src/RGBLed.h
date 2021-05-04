@@ -45,7 +45,7 @@ class RGBLed {
 		void blink(int red, int green, int blue, int onDuration, int duration);
 		void intensity(int red, int green, int blue, int brightness);
 		void fade(int red, int green, int blue, int steps, int duration, bool out);
-		void fade(int red, int green, int blue, int steps, int duration, int value);
+		void fade(int red, int green, int blue, int steps, int duration, int value, bool wait);
 
 };
 
