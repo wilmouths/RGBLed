@@ -34,6 +34,9 @@ void RGBLed::brightness(int red, int green, int blue, int brightness) {
 }
 
 void RGBLed::intensity(int red, int green, int blue, int brightness) {
+	if (brightness > 100) brightness = 100;
+	if (brightness < 0) brightness = 0;
+
 	red = (red * brightness) / 100;
 	green = (green * brightness) / 100;
 	blue = (blue * brightness) / 100;
@@ -57,6 +60,9 @@ void RGBLed::flash(int red, int green, int blue, int onDuration, int duration) {
 }
 
 void RGBLed::blink(int red, int green, int blue, int onDuration, int duration) {
+	if (onDuration < 0) onDuration = 0;
+	if (duration < 0) duration = 0;
+
 	color(red, green, blue);
 	delay(onDuration);
 	off();
@@ -72,6 +78,15 @@ void RGBLed::setColor(int red, int green, int blue) {
 }
 
 void RGBLed::color(int red, int green, int blue) {
+	if (red < 0) { red = 0; }
+	if (red > 255) { red = 255; }
+
+	if (green < 0) { green = 0; }
+	if (green > 255) { green = 255; }
+	
+	if (blue < 0) { blue = 0; }
+	if (blue > 255) { blue = 255; }
+
 	if (_common == COMMON_ANODE) {
 		analogWrite(_red, 255 - red);
 		analogWrite(_green, 255 - green);
@@ -100,6 +115,9 @@ void RGBLed::fadeIn(int red, int green, int blue, int steps, int duration) {
 }
 
 void RGBLed::fade(int red, int green, int blue, int steps, int duration, bool out) {
+	if (duration < 0) duration = 0;
+	if (steps < 1) steps = 1;
+
 	if (out) {
 		for (int i = 255; i >= 0; i -= steps) {
 			fade(red, green, blue, steps, duration, i);
@@ -113,15 +131,6 @@ void RGBLed::fade(int red, int green, int blue, int steps, int duration, bool ou
 
 void RGBLed::fade(int red, int green, int blue, int steps, int duration, int value) {
 	float brightness = float(value) / 255.f;
-
-	if (red < 0) { red = 0;	}
-	if (red > 255) { red = 255;	}
-
-	if (green < 0) { green = 0;	}
-	if (green > 255) { green = 255;	}
-	
-	if (blue < 0) { blue = 0;	}
-	if (blue > 255) { blue = 255;	}
 
 	color(red * brightness, green * brightness, blue * brightness);
 
