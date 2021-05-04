@@ -101,12 +101,12 @@ void RGBLed::fadeIn(int red, int green, int blue, int steps, int duration) {
 
 void RGBLed::fade(int red, int green, int blue, int steps, int duration, bool out) {
 	if (out) {
-		for (int i = 255; i >= 0; i -= steps) {
-			fade(red, green, blue, steps, duration, i);
+		for (int i = steps; i >=0; i--) {
+			fade(red, green, blue, steps, duration, i * 255 / steps);
 		}
 	} else {
-		for (int i = 0; i <= 255; i += steps) {
-			fade(red, green, blue, steps, duration, i);
+		for (int i = 0; i <= steps; i++) {
+			fade(red, green, blue, steps, duration, i * 255 / steps);
 		}
 	}
 }
