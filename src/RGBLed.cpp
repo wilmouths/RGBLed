@@ -119,20 +119,20 @@ void RGBLed::fade(int red, int green, int blue, int steps, int duration, bool ou
 	if (steps < 1) steps = 1;
 
 	if (out) {
-		for (int i = 255; i >= 0; i -= steps) {
-			fade(red, green, blue, steps, duration, i);
+		for (int i = steps; i >=0; i--) {
+			fade(red, green, blue, steps, duration, i * 255 / steps, i > 0);
 		}
 	} else {
-		for (int i = 0; i <= 255; i += steps) {
-			fade(red, green, blue, steps, duration, i);
+		for (int i = 0; i <= steps; i++) {
+			fade(red, green, blue, steps, duration, i * 255 / steps, i < steps);
 		}
 	}
 }
 
-void RGBLed::fade(int red, int green, int blue, int steps, int duration, int value) {
+void RGBLed::fade(int red, int green, int blue, int steps, int duration, int value, bool wait) {
 	float brightness = float(value) / 255.f;
 
 	color(red * brightness, green * brightness, blue * brightness);
 
-	delay((unsigned long) (duration / steps));
+	if (wait) { delay((unsigned long) (duration / steps)); }
 }
