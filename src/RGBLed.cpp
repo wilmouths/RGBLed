@@ -93,7 +93,7 @@ void RGBLed::blink(int red, int green, int blue, int onDuration, int duration)
 	if (duration < 0)
 		duration = 0;
 
-	color(red, green, blue);
+	intensity(red, green, blue, _brightness);
 	delay(onDuration);
 	off();
 	delay(duration);
