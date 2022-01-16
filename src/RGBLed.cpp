@@ -8,7 +8,7 @@ int RGBLed::BLUE[3] = {0, 0, 255};
 int RGBLed::MAGENTA[3] = {255, 0, 255};
 int RGBLed::CYAN[3] = {0, 255, 255};
 int RGBLed::YELLOW[3] = {255, 255, 0};
-int RGBLed::WHITE[3] = {255, 255, 255};
+int RGBLed::RGB_WHITE[3] = {255, 255, 255};
 
 bool RGBLed::COMMON_ANODE = true;
 bool RGBLed::COMMON_CATHODE = false;
