@@ -13,7 +13,7 @@ int RGBLed::RGB_WHITE[3] = {255, 255, 255};
 bool RGBLed::COMMON_ANODE = true;
 bool RGBLed::COMMON_CATHODE = false;
 
-RGBLed::RGBLed(int red, int green, int blue, bool common) : _red(red), _green(green), _blue(blue), _common(common)
+RGBLed::RGBLed(int red, int green, int blue, bool common) : _red(red), _green(green), _blue(blue), _common(common), _brightness(100)
 {
 #if defined(ESP32)
 	ledcSetup(0, 5000, 8);
@@ -44,6 +44,11 @@ void RGBLed::brightness(int rgb[3], int brightness)
 void RGBLed::brightness(int red, int green, int blue, int brightness)
 {
 	intensity(red, green, blue, brightness);
+}
+
+void RGBLed::brightness(int brightness)
+{
+	_brightness = brightness;
 }
 
 void RGBLed::intensity(int red, int green, int blue, int brightness)
@@ -94,12 +99,12 @@ void RGBLed::blink(int red, int green, int blue, int onDuration, int duration)
 
 void RGBLed::setColor(int rgb[3])
 {
-	color(rgb[0], rgb[1], rgb[2]);
+	intensity(rgb[0], rgb[1], rgb[2], _brightness);
 }
 
 void RGBLed::setColor(int red, int green, int blue)
 {
-	color(red, green, blue);
+	intensity(red, green, blue, _brightness);
 }
 
 void RGBLed::color(int red, int green, int blue)

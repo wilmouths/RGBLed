@@ -13,6 +13,7 @@ public:
 
 	void brightness(int rgb[3], int brightness);
 	void brightness(int red, int green, int blue, int brightness);
+	void brightness(int brightness);
 
 	void flash(int rgb[3], int duration);
 	void flash(int rgb[3], int onDuration, int duration);
@@ -41,7 +42,7 @@ public:
 	static bool COMMON_CATHODE;
 
 private:
-	int _red, _green, _blue, _common;
+	int _red, _green, _blue, _common, _brightness;
 	void color(int red, int green, int blue);
 	void blink(int red, int green, int blue, int onDuration, int duration);
 	void intensity(int red, int green, int blue, int brightness);
