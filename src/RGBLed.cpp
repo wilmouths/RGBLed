@@ -38,11 +38,13 @@ void RGBLed::off()
 
 void RGBLed::brightness(int rgb[3], int brightness)
 {
+	_brightness = brightness;
 	intensity(rgb[0], rgb[1], rgb[2], brightness);
 }
 
 void RGBLed::brightness(int red, int green, int blue, int brightness)
 {
+	_brightness = brightness;
 	intensity(red, green, blue, brightness);
 }
 
