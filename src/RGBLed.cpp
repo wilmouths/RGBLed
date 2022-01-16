@@ -211,7 +211,7 @@ void RGBLed::fade(int red, int green, int blue, int steps, int duration, int val
 {
 	float brightness = float(value) / 255.f;
 
-	color(red * brightness, green * brightness, blue * brightness);
+	intensity(red * brightness, green * brightness, blue * brightness, _brightness);
 
 	if (wait)
 	{
