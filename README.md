@@ -70,7 +70,7 @@ led.fadeIn(255, 0, 0, 5, 100); // Fade in with 5 steps during 100ms
 + MAGENTA
 + CYAN
 + YELLOW
-+ RGB_WHITE (White color created by setting RED, GREEN, and BLUE to 255)
++ WHITE
 
 How use colors ?
 ```cpp

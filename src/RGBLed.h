@@ -36,7 +36,7 @@ public:
 	static int MAGENTA[3];
 	static int CYAN[3];
 	static int YELLOW[3];
-	static int RGB_WHITE[3];
+	static int WHITE[3];
 
 	static bool COMMON_ANODE;
 	static bool COMMON_CATHODE;
