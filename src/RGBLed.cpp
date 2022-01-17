@@ -218,3 +218,44 @@ void RGBLed::fade(int red, int green, int blue, int steps, int duration, int val
 		delay((unsigned long)(duration / steps));
 	}
 }
+
+void RGBLed::crossFade(int rgbFrom[3], int rgbTo[3], int steps, int duration)
+{
+	crossFade(rgbFrom[0], rgbFrom[1], rgbFrom[2], rgbTo[0], rgbTo[1], rgbTo[2], steps, duration);
+}
+
+void RGBLed::crossFade(int fromRed, int fromGreen, int fromBlue, int toRed, int toGreen, int toBlue, int steps, int duration)
+{
+	// Determine per color change
+	//   toValue - fromValue = deltaValue
+	int deltaRed = toRed - fromRed;
+	int deltaGreen = toGreen - fromGreen;
+	int deltaBlue = toBlue - fromBlue;
+
+	// Determine change per step per color
+	//   deltaValue / steps
+	//   Note: Forcing casting to floats to ensure smooth fades
+	//         with large number of steps
+	float changeRed = (float) deltaRed / (float) steps;
+	float changeGreen = (float) deltaGreen / (float) steps;
+	float changeBlue = (float) deltaBlue / (float) steps;
+
+	// run through steps
+	for (int i = 0; i <= steps; i++)
+	{
+		// Determine the new value for each color based on the step
+		//  stepValue = fromValue + (changeValue * stepNumber)
+		int stepRed = fromRed + (changeRed * i);
+		int stepGreen = fromGreen + (changeGreen * i);
+		int stepBlue = fromBlue + (changeBlue * i);
+
+		// Make step change in color
+		intensity(stepRed, stepGreen, stepBlue, _brightness);
+
+		// delay based on total duration requested and number of steps
+		if (i < steps)
+		{
+			delay((unsigned long)(duration / steps));
+		}
+	}
+}

@@ -30,6 +30,9 @@ public:
 	void fadeIn(int rgb[3], int steps, int duration);
 	void fadeIn(int red, int green, int blue, int steps, int duration);
 
+	void crossFade(int rgbFrom[3], int rgbTo[3], int steps, int duration);
+	void crossFade(int fromRed, int fromGreen, int fromBlue, int toRed, int toGreen, int toBlue, int steps, int duration);
+
 	static int RED[3];
 	static int GREEN[3];
 	static int BLUE[3];
