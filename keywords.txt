@@ -16,6 +16,7 @@ fadeOut	KEYWORD2
 fadeIn	KEYWORD2
 off	KEYWORD2
 brightness	KEYWORD2
+crossFade	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
