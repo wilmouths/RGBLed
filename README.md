@@ -85,3 +85,10 @@ How use colors ?
 ```cpp
 RGLed::RED
 ```
+
+## Contributors
+
+Thank you to all our [contributors](https://github.com/wilmouths/RGBLed/graphs/contributors)!
+
+[![](https://contrib.rocks/image?repo=wilmouths/RGBLed)](https://github.com/wilmouths/RGBLed/graphs/contributors)
+
