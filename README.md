@@ -11,7 +11,7 @@
 #include <RGBLed.h>
 ```
 
-+ Create an object, this object takes one parameter which corressponds to the analgo pins are connected to on the Arduino.
++ Create an object, this object takes one parameter which corresponds to the analog pins are connected to on the Arduino. 
 ```cpp
 RGBLed led(RED_PIN, GREEN_PIN, BLUE_PIN, RGBLed::COMMON_ANODE or RGBLed::COMMON_CATHODE);
 ```
@@ -28,7 +28,12 @@ led.setColor(255, 0, 0);
 led.off();
 ```
 
-+ Set brightness
++ Set LED relative brightness level. (*Note: brightness level defaults to `100`.*)
+```cpp
+led.brightness(50); // 50% brightness
+```
+
++ Set brightness and color at the same time ()
 ```cpp
 led.brightness(RGBLed::RED, 50); // 50% brightness
 // or
