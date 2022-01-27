@@ -51,7 +51,7 @@ led.flash(RGBLed::RED, 250, 100); // Light on during 250ms and flash with interv
 led.flash(255, 0, 0, 250, 100); // Light on during 250ms and flash with interval (100ms)
 ```
 
-+ Fade
++ Fade In or Out
 ```cpp
 led.fadeOut(RGBLed::RED, 5, 100); // Fade out with 5 steps during 100ms
 // or
@@ -60,6 +60,15 @@ led.fadeOut(255, 0, 0, 5, 100); // Fade out with 5 steps during 100ms
 led.fadeIn(RGBLed::RED, 5, 100); // Fade in with 5 steps during 100ms
 // or
 led.fadeIn(255, 0, 0, 5, 100); // Fade in with 5 steps during 100ms
+```
+
++ Cross Fade between two colors
+```cpp
+// Usage: led.crossFade(rgbFrom[3], rgbTo[3], steps, duration)
+led.crossFade(RGBLed::RED, RGBLed::GREEN, 5, 100);  // Fade from RED to GREEN in 5 steps during 100ms 
+// or 
+// Usage: led.crossFade(fromR, fromG, fromB, toR, toG, toB, steps, duration)
+led.crossFade(255, 0, 0, 0, 255, 0, 5, 100);    // Fade from RED to GREEN in 5 steps during 100ms 
 ```
 
 ## Colors
