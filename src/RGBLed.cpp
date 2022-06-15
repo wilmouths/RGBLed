@@ -262,7 +262,7 @@ void RGBLed::crossFade(int fromRed, int fromGreen, int fromBlue, int toRed, int 
 
 void RGBLed::gradient(int rgbFrom[3], int rgbTo[3], int step)
 {
-	crossFade(rgbFrom[0], rgbFrom[1], rgbFrom[2], rgbTo[0], rgbTo[1], rgbTo[2], steps, duration);
+	gradient(rgbFrom[0], rgbFrom[1], rgbFrom[2], rgbTo[0], rgbTo[1], rgbTo[2], step);
 }
 
 void RGBLed::gradient(int fromRed, int fromGreen, int fromBlue, int toRed, int toGreen, int toBlue, int step)
