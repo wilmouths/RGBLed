@@ -71,6 +71,15 @@ led.crossFade(RGBLed::RED, RGBLed::GREEN, 5, 100);  // Fade from RED to GREEN in
 led.crossFade(255, 0, 0, 0, 255, 0, 5, 100);    // Fade from RED to GREEN in 5 steps during 100ms 
 ```
 
++ Set step (0-255) for specific color gradient between two colors
+```cpp
+// Usage: led.gradient(rgbFrom[3], rgbTo[3], step)
+led.gradient(RGBLed::RED, RGBLed::GREEN, 200);  // Color step 200 of Gradient from RED to GREEN
+// or 
+// Usage: led.crossFade(fromR, fromG, fromB, toR, toG, toB, steps, duration)
+led.gradient(255, 0, 0, 0, 255, 0, 200);     // Color step 200 of Gradient from RED to GREEN
+```
+
 ## Colors
 > You can create your own colors or use the followings colors
 + RED
