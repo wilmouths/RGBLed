@@ -32,6 +32,9 @@ public:
 
 	void crossFade(int rgbFrom[3], int rgbTo[3], int steps, int duration);
 	void crossFade(int fromRed, int fromGreen, int fromBlue, int toRed, int toGreen, int toBlue, int steps, int duration);
+	
+	void gradient(int rgbFrom[3], int rgbTo[3], int step);
+	void gradient(int fromRed, int fromGreen, int fromBlue, int toRed, int toGreen, int toBlue, int step);
 
 	static int RED[3];
 	static int GREEN[3];
