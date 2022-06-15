@@ -259,3 +259,37 @@ void RGBLed::crossFade(int fromRed, int fromGreen, int fromBlue, int toRed, int 
 		}
 	}
 }
+
+void RGBLed::gradient(int rgbFrom[3], int rgbTo[3], int step)
+{
+	crossFade(rgbFrom[0], rgbFrom[1], rgbFrom[2], rgbTo[0], rgbTo[1], rgbTo[2], steps, duration);
+}
+
+void RGBLed::gradient(int fromRed, int fromGreen, int fromBlue, int toRed, int toGreen, int toBlue, int step)
+{
+	// Determine per color change
+	//   toValue - fromValue = deltaValue
+	int deltaRed = toRed - fromRed;
+	int deltaGreen = toGreen - fromGreen;
+	int deltaBlue = toBlue - fromBlue;
+
+	// Determine change per step per color
+	//   deltaValue / steps
+	//   Note: Forcing casting to floats to ensure smooth fades
+	//         with large number of steps
+	float changeRed = (float) deltaRed / (float)255;
+	float changeGreen = (float) deltaGreen / (float) 255;
+	float changeBlue = (float) deltaBlue / (float) 255;
+
+	
+		// Determine the new value for each color based on the step
+		//  stepValue = fromValue + (changeValue * stepNumber)
+		int stepRed = fromRed + (changeRed * step);
+		int stepGreen = fromGreen + (changeGreen * step);
+		int stepBlue = fromBlue + (changeBlue * step);
+
+		// Make step change in color
+		intensity(stepRed, stepGreen, stepBlue, _brightness);
+
+	
+}
