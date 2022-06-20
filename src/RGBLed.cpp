@@ -282,14 +282,12 @@ void RGBLed::gradient(int fromRed, int fromGreen, int fromBlue, int toRed, int t
 	float changeBlue = (float) deltaBlue / (float) 255;
 
 	
-		// Determine the new value for each color based on the step
-		//  stepValue = fromValue + (changeValue * stepNumber)
-		int stepRed = fromRed + (changeRed * step);
-		int stepGreen = fromGreen + (changeGreen * step);
-		int stepBlue = fromBlue + (changeBlue * step);
+	// Determine the new value for each color based on the step
+	//  stepValue = fromValue + (changeValue * stepNumber)
+	int stepRed = fromRed + (changeRed * step);
+	int stepGreen = fromGreen + (changeGreen * step);
+	int stepBlue = fromBlue + (changeBlue * step);
 
-		// Make step change in color
-		intensity(stepRed, stepGreen, stepBlue, _brightness);
-
-	
+	// Make step change in color
+	intensity(stepRed, stepGreen, stepBlue, _brightness);
 }
